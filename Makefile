@@ -2,6 +2,7 @@ FLAGS = -Wall -Wextra -Werror
 NAME = libft
 
 $(NAME):
+	# normal standard library
 	gcc $(FLAGS) ft_memset.c -c
 	gcc $(FLAGS) ft_bzero.c -c
 	gcc $(FLAGS) ft_memcpy.c -c
@@ -30,10 +31,15 @@ $(NAME):
 	gcc $(FLAGS) ft_isprint.c -c
 	gcc $(FLAGS) ft_toupper.c -c
 	gcc $(FLAGS) ft_tolower.c -c
+
+	# 42 utility functions
+
+
+
 	ar rcs libft.a *.o
 all: $(NAME)
 clean:
-	rm libft.a
+	rm -f libft.a
 fclean: clean
-	rm *.o
+	rm -f *.o
 re: fclean, all
