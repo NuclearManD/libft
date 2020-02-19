@@ -18,9 +18,10 @@ char	*ft_strtrim(char const *s)
 	int len;
 	char *nova;
 
-	while (ft_is_space(*s))
+	len = 0;
+	while (ft_isspace(*s))
 		s++;
-	while (s[len] && !ft_is_space(s[len]))
+	while (s[len] && !ft_isspace(s[len]))
 		len++;
 	nova = (char*)malloc(len + 1);
 	if (nova == NULL)
