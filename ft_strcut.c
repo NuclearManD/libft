@@ -17,7 +17,7 @@
 **  If character c is not found then a copy of the whole string is returned
 */
 
-char	*ft_strcut(char *s, char c)
+char	*ft_strcut(const char *s, char c)
 {
 	return (ft_strsub(s, 0, ft_strchri(s, c)));
 }

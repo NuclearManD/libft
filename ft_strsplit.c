@@ -15,10 +15,10 @@
 
 char	**ft_strsplit(char const *s, char c)
 {
-	int		nstr;
-	char	**arr;
-	char	*so;
-	char	last;
+	int			nstr;
+	char		**arr;
+	const char	*so;
+	char		last;
 
 	nstr = ft_strcnt_norep(s, c) + 1;
 	arr = (char**)malloc(sizeof(char*) * (nstr + 1));
