@@ -15,7 +15,7 @@
 
 # include "string.h"
 
-char	*strrchr(const char *s, int c);
+char	*ft_strrchr(char *s, int c);
 void	ft_putstr(char *str);
 int		ft_strcmp(char *s1, char *s2);
 int		ft_strlcat(char *dest, const char *src, unsigned int size);
@@ -46,7 +46,7 @@ int		ft_atoi(char *str);
 char	*ft_strupcase(char *str);
 int		ft_str_is_numeric(char *str);
 int		ft_str_is_printable(char *str);
-char	*strchr(const char *s, int c);
+char	*ft_strchr(const char *s, int c);
 int		ft_str_is_alpha(char *str);
 
 #endif
