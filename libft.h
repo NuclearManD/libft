@@ -23,7 +23,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 char	*ft_strncpy(char *dest, const char *src, unsigned int n);
 char	*ft_strlowcase(char *str);
-char	*ft_strstr(const char *str, const char *to_find);
+char	*ft_strstr(char *str, const char *to_find);
 void	ft_putnbr(int nb);
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
