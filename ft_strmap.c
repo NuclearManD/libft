@@ -10,8 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strmap(char const *s, char (*f)(char))
 {
-	while(*s)
-		f(*(s++));
+	char *out;
+	int i;
+
+	i = -1;
+	out = ft_strnew(ft_strlen(s));
+	if (out == NULL)
+		return (NULL);
+	while (s[++i])
+		out[i] = f(s[i]);
+	return out;
 }
