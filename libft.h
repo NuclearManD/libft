@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrophy <dbrophy@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/19 15:26:04 by dbrophy           #+#    #+#             */
-/*   Updated: 2020/02/19 15:26:04 by dbrophy          ###   ########.fr       */
+/*   Created: 2020/02/19 15:31:38 by dbrophy           #+#    #+#             */
+/*   Updated: 2020/02/19 15:31:38 by dbrophy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ void	ft_putnbr_base(int nb, char *base);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr(char *str);
 void	ft_putstr_fd(char const *s, int fd);
-long	ft_signature(char *str);
-long	ft_signature(int val);
-long	ft_signature(long val);
-long	ft_signature(double val);
+long	ft_signature_s(char *str);
+long	ft_signature_i(int val);
+long	ft_signature_l(long val);
+long	ft_signature_d(double val);
 int		ft_str_is_alpha(char *str);
 int		ft_str_is_lowercase(char *str);
 int		ft_str_is_numeric(char *str);
