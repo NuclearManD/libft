@@ -16,5 +16,5 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 	else if ((size_t)dest < (size_t)src) // copy forwards to avoid overwrite
 		while (++i < n)
 			d[i] = s[i];
-	return dest;
+	return (dest);
 }
