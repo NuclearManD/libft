@@ -12,7 +12,7 @@
 
 #include "stdlib.h"
 
-char	*strchr(const char *s, int c)
+char	*strchr(char *s, int c)
 {
 	while (*s != (char)c)
 		if (*(s++) == 0)
