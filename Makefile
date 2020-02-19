@@ -43,7 +43,6 @@ $(NAME):
 	gcc $(FLAGS) ft_strupcase.c -c -o ft_strupcase.c.o
 	gcc $(FLAGS) ft_tolower.c -c -o ft_tolower.c.o
 	gcc $(FLAGS) ft_toupper.c -c -o ft_toupper.c.o
-	gcc $(FLAGS) test.c -c -o test.c.o
 	
 	ar rcs $(NAME) ft_atoi.c.o ft_atoi_base.c.o ft_bzero.c.o ft_isalnum.c.o ft_isalpha.c.o ft_isascii.c.o ft_isdigit.c.o ft_isprint.c.o ft_memccpy.c.o ft_memchr.c.o ft_memcmp.c.o ft_memcpy.c.o ft_memmove.c.o ft_memset.c.o ft_putnbr.c.o ft_putnbr_base.c.o ft_putstr.c.o ft_str_is_alpha.c.o ft_str_is_lowercase.c.o ft_str_is_numeric.c.o ft_str_is_printable.c.o ft_str_is_uppercase.c.o ft_strcapitalize.c.o ft_strcat.c.o ft_strchr.c.o ft_strcmp.c.o ft_strcpy.c.o ft_strdup.c.o ft_strlcat.c.o ft_strlcpy.c.o ft_strlen.c.o ft_strlowcase.c.o ft_strncat.c.o ft_strncmp.c.o ft_strncpy.c.o ft_strnstr.c.o ft_strrchr.c.o ft_strstr.c.o ft_strupcase.c.o ft_tolower.c.o ft_toupper.c.o test.c.o
 
