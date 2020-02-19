@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrophy <dbrophy@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/19 15:31:38 by dbrophy           #+#    #+#             */
-/*   Updated: 2020/02/19 15:31:38 by dbrophy          ###   ########.fr       */
+/*   Created: 2020/02/19 15:57:50 by dbrophy           #+#    #+#             */
+/*   Updated: 2020/02/19 15:57:50 by dbrophy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
+int		ft_isspace(int c);
 char	*ft_itoa(int n);
 int		ft_logi(int base, int val);
 void	*ft_memalloc(size_t size);
@@ -41,9 +42,9 @@ void	ft_putendl(char const *s);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr(int nb);
 void	ft_putnbr_base(int nb, char *base);
-void	ft_putnbr_fd(int n, int fd);
+void	ft_putnbr_fd(int nb, int fd);
 void	ft_putstr(char *str);
-void	ft_putstr_fd(char const *s, int fd);
+void	ft_putstr_fd(char const *str, int fd);
 long	ft_signature_s(char *str);
 long	ft_signature_i(int val);
 long	ft_signature_l(long val);
