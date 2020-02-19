@@ -10,20 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+#include "string.h"
+
+char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
 	int i;
-    int j;
+    size_t j;
 
     j = 0;
 	if (*to_find == 0)
-		return (str);
+		return ((char*)str);
 	while (*str && j < len)
 	{
 		i = 0;
 		while (str[i] == to_find[i])
 			if (to_find[++i] == 0)
-				return (str);
+				return ((char*)str);
 		str++;
         j++;
 	}
