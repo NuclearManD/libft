@@ -10,7 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putstr_fd(char const *s, int fd)
+#include "unistd.h"
+#include "libft.h"
+
+void	ft_putstr_fd(char const *str, int fd)
 {
 	write(fd, str, ft_strlen(str));
 }
