@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrophy <dbrophy@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/19 00:06:14 by dbrophy           #+#    #+#             */
-/*   Updated: 2020/02/19 00:06:14 by dbrophy          ###   ########.fr       */
+/*   Created: 2020/02/19 11:01:07 by dbrophy           #+#    #+#             */
+/*   Updated: 2020/02/19 11:01:07 by dbrophy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,13 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int c);
+int		ft_toupper(int c);
 char	*ft_strcpy(char *dest, const char *src);
 int		ft_putchar(char c);
 void	recursive_putnbr_base(int nb, int baselen, char *base);
 void	ft_putnbr_base(int nb, char *base);
 char	*ft_strdup(const char *s);
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char	*ft_strnstr(const char *str, const char *to_find, size_t len);
 int		ft_isascii(int c);
 size_t	ft_strlen(const char *str);
 int		ft_str_is_lowercase(char *str);
@@ -53,6 +54,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
 int		ft_isalpha(int c);
 char	*ft_strcat(char *dest, char *src);
+int		ft_tolower(int c);
 int		ft_atoi(char *str);
 char	*ft_strupcase(char *str);
 int		ft_str_is_numeric(char *str);
