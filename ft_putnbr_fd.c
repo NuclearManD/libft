@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrophy <dbrophy@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/23 17:40:28 by dbrophy           #+#    #+#             */
-/*   Updated: 2019/10/23 17:40:28 by dbrophy          ###   ########.fr       */
+/*   Created: 2020/02/19 12:58:16 by dbrophy           #+#    #+#             */
+/*   Updated: 2020/02/19 12:58:16 by dbrophy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "unistd.h"
 
-void	ft_putnbr(int nb)
+void	ft_putnbr_fd(int n, int fd)
 {
 	char	out[12];
 	int		len;
@@ -22,12 +22,12 @@ void	ft_putnbr(int nb)
 		out[len++] = '0';
 	else if (nb == -2147483648)
 	{
-		write(1, "-2", 2);
+		write(fd, "-2", 2);
 		nb = 147483648;
 	}
 	else if (nb < 0)
 	{
-		write(1, "-", 1);
+		write(fd, "-", 1);
 		nb = -nb;
 	}
 	while (nb != 0)
@@ -36,5 +36,5 @@ void	ft_putnbr(int nb)
 		nb = nb / 10;
 	}
 	while ((len--) > 0)
-		write(1, &(out[len]), 1);
+		write(fd, &(out[len]), 1);
 }
