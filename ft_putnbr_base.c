@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putchar(char c);
+#include "libft.h"
 
-void	recursive_putnbr_base(int nb, int baselen, char *base)
+static void	recursive_putnbr_base(int nb, int baselen, char *base)
 {
 	if (nb < baselen)
 		ft_putchar(base[nb]);

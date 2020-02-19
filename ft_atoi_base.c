@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		calc_base_len(char *base)
+static int	calc_base_len(char *base)
 {
 	int len;
 	int i;
@@ -26,7 +26,7 @@ int		calc_base_len(char *base)
 	return (len);
 }
 
-int		ft_chr_idx(char *str, int len, char c)
+static int	ft_chr_idx(char *str, int len, char c)
 {
 	int i;
 
@@ -39,7 +39,7 @@ int		ft_chr_idx(char *str, int len, char c)
 	return (-1);
 }
 
-int		ft_atoi_base(char *str, char *base)
+int			ft_atoi_base(char *str, char *base)
 {
 	int out;
 	int baselen;
