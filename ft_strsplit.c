@@ -13,7 +13,7 @@
 #include "libft.h"
 #include "stdlib.h"
 
-char	**ft_strsplit(char const *s, char c)
+char	**ft_strsplit(const char *s, char c)
 {
 	int			nstr;
 	char		**arr;

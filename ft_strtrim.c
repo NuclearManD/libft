@@ -13,7 +13,7 @@
 #include "stdlib.h"
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+char	*ft_strtrim(const char *s)
 {
 	int len;
 	char *nova;
