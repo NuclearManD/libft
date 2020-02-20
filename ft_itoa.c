@@ -16,9 +16,18 @@
 static int	itoa_setup(int n, char **str)
 {
 	int size;
+	int b;
 
-	size = ft_imax(1, ft_logi(10, n)) + 1 + (n < 0);
+	size = 1 + (n < 0);
+	b = n;
+	while (b != 0)
+	{
+		b = b / 10;
+		size++;
+	}
 	*str = (char*)malloc(size);
+	if (*str == NULL)
+		return (-1);
 	(*str)[--size] = 0;
 	if (n == 0)
 		(*str)[0] = '0';
@@ -28,26 +37,27 @@ static int	itoa_setup(int n, char **str)
 char		*ft_itoa(int n)
 {
 	int		len;
+	int		i;
 	char 	*str;
 
 	len = itoa_setup(n, &str);
 	if (str == NULL)
 		return (NULL);
-	len = 0;
+	i = 0;
 	if (n == -2147483648)
 	{
-		str[len++] = '-';
-		str[len++] = '2';
+		str[0] = '-';
+		str[1] = '2';
 		n = 147483648;
 	}
 	else if (n < 0)
 	{
-		str[len++] = '-';
+		str[0] = '-';
 		n = -n;
 	}
 	while (n != 0)
 	{
-		str[len++] = (n % 10) + '0';
+		str[len - ++i] = (n % 10) + '0';
 		n = n / 10;
 	}
 	return (str);
