@@ -18,11 +18,14 @@ char	*ft_strtrim(const char *s)
 	int len;
 	char *nova;
 
-	len = 0;
+	if (s == NULL)
+		return (NULL);
 	while (ft_isspace(*s))
 		s++;
-	while (s[len] && !ft_isspace(s[len]))
-		len++;
+	len = ft_strlen(s);
+	if (len > 0)
+		while (ft_isspace(s[len - 1]))
+			len--;
 	nova = (char*)malloc(len + 1);
 	if (nova == NULL)
 		return (NULL);

@@ -10,13 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "stdlib.h"
 #include "string.h"
+#include "libft.h"
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
 	int i;
     size_t j;
 
+	if (str == NULL || to_find == NULL)
+		return (NULL);
+	len -= ft_strlen(to_find) - 1;
     j = 0;
 	if (*to_find == 0)
 		return ((char*)str);
