@@ -16,5 +16,5 @@ int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
 		return (0);
 	while ((*s1 == *(s2++)) && (*s1) && (--n))
 		s1++;
-	return ((*s1) - (*(s2 - 1)));
+	return ((unsigned char)(*s1) - (unsigned char)(*(s2 - 1)));
 }
