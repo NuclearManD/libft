@@ -17,6 +17,8 @@ char	*ft_strnew(size_t size)
 	char *mem;
 
 	mem = malloc(++size);
+	if (mem == NULL)
+		return (NULL);
 	while (size--)
 		mem[size] = 0;
 	return (mem);
