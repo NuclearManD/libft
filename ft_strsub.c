@@ -21,7 +21,7 @@ char	*ft_strsub(const char *s, unsigned int start, size_t len)
 		return (NULL);
 	nova = ft_strnew(len);
 	if (nova == NULL)
-		return (nova);
+		return (NULL);
 	ft_strncpy(nova, s + start, len);
 	nova[len] = 0;
 	return (nova);

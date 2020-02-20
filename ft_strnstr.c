@@ -21,8 +21,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 
 	if (str == NULL || to_find == NULL)
 		return (NULL);
-	len -= ft_strlen(to_find) - 1;
-    j = 0;
+    j = ft_strlen(to_find) - 1;
 	if (*to_find == 0)
 		return ((char*)str);
 	while (*str && j < len)
@@ -34,5 +33,5 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 		str++;
         j++;
 	}
-	return (0);
+	return (NULL);
 }

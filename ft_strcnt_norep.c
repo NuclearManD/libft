@@ -27,5 +27,7 @@ int		ft_strcnt_norep(const char *s, char c)
 			i++;
 		last = *(s++);
 	}
+	if (c == 0)
+		return (1);
 	return (i);
 }

@@ -14,6 +14,8 @@ int		ft_strcnt(const char *s, char c)
 {
 	int i;
 
+	if (c == 0)
+		return (1);
 	i = 0;
 	while (*s)
 		if (*(s++) == c)

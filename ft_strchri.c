@@ -20,7 +20,13 @@ int		ft_strchri(const char *s, char c)
 	int i;
 
 	i = 0;
-	while (*s != c && *s != 0)
+	while (s[i] != 0)
+	{
+		if (s[i] == c)
+			return (i);
 		i++;
-	return (i);
+	}
+	if (c == 0)
+		return (i);
+	return (-1);
 }

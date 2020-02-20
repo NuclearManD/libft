@@ -19,5 +19,10 @@
 
 char	*ft_strcut(const char *s, char c)
 {
-	return (ft_strsub(s, 0, ft_strchri(s, c)));
+	int i;
+
+	i = ft_strchri(s, c);
+	if (i == -1)
+		return ft_strdup(s);
+	return (ft_strsub(s, 0, i));
 }

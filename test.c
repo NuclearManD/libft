@@ -507,13 +507,18 @@ int				_autogen_test_ft_strcat(char *dest, char *src, char *__expected)
 	return (__success);
 }
 
-int				_autogen_test_ft_strchr(char *s, int c, char *__expected)
+int				_autogen_test_ft_strchr(char *s, int c)
 {
 	int			__success;
 	char		*__result;
+	char		*__expected;
 
+	__expected = strchr(s, c);
 	__result = ft_strchr(s, c);
-	__success = 0 == strcmp(__expected, __result);
+	if (__expected == NULL || __result == NULL)
+		__success = __result == NULL;
+	else
+		__success = 0 == strcmp(__expected, __result);
 	if (!__success)
 	printf("KO ft_strchr(%s, %d) = %s\n\texpected %s\n", s, c, __result, __expected);
 	return (__success);
@@ -818,7 +823,10 @@ int				_autogen_test_ft_strnstr(const char *str, const char *to_find, size_t len
 
 	__expected = strnstr(str, to_find, len);
 	__result = ft_strnstr(str, to_find, len);
-	__success = 0 == strcmp(__expected, __result);
+	if (__expected == NULL || __result == NULL)
+		__success = __result == NULL;
+	else
+		__success = 0 == strcmp(__expected, __result);
 	if (!__success)
 	printf("KO ft_strnstr(%s, %s, 0x%zX) = %s\n\texpected %s\n", str, to_find, len, __result, __expected);
 	return (__success);
@@ -832,7 +840,10 @@ int				_autogen_test_ft_strrchr(char *s, int c)
 
 	__expected = strrchr(s, c);
 	__result = ft_strrchr(s, c);
-	__success = 0 == strcmp(__expected, __result);
+	if (__expected == NULL || __result == NULL)
+		__success = __result == NULL;
+	else
+		__success = 0 == strcmp(__expected, __result);
 	if (!__success)
 	printf("KO ft_strrchr(%s, %d) = %s\n\texpected %s\n", s, c, __result, __expected);
 	return (__success);
@@ -858,7 +869,10 @@ int				_autogen_test_ft_strstr(char *str, const char *to_find)
 
 	__expected = strstr(str, to_find);
 	__result = ft_strstr(str, to_find);
-	__success = 0 == strcmp(__expected, __result);
+	if (__expected == NULL || __result == NULL)
+		__success = __result == NULL;
+	else
+		__success = 0 == strcmp(__expected, __result);
 	if (!__success)
 	printf("KO ft_strstr(%s, %s) = %s\n\texpected %s\n", str, to_find, __result, __expected);
 	return (__success);
@@ -870,7 +884,10 @@ int				_autogen_test_ft_strsub(const char *s, unsigned int start, size_t len, ch
 	char		*__result;
 
 	__result = ft_strsub(s, start, len);
-	__success = 0 == strcmp(__expected, __result);
+	if (__expected == NULL || __result == NULL)
+		__success = __result == NULL;
+	else
+		__success = 0 == strcmp(__expected, __result);
 	if (!__success)
 	printf("KO ft_strsub(%s, %u, 0x%zX) = %s\n\texpected %s\n", s, start, len, __result, __expected);
 	return (__success);
@@ -882,7 +899,10 @@ int				_autogen_test_ft_strtrim(const char *s, char *__expected)
 	char		*__result;
 
 	__result = ft_strtrim(s);
-	__success = 0 == strcmp(__expected, __result);
+	if (__expected == NULL || __result == NULL)
+		__success = __result == NULL;
+	else
+		__success = 0 == strcmp(__expected, __result);
 	if (!__success)
 	printf("KO ft_strtrim(%s) = %s\n\texpected %s\n", s, __result, __expected);
 	return (__success);
@@ -894,7 +914,10 @@ int				_autogen_test_ft_strupcase(char *str, char *__expected)
 	char		*__result;
 
 	__result = ft_strupcase(str);
-	__success = 0 == strcmp(__expected, __result);
+	if (__expected == NULL || __result == NULL)
+		__success = __result == NULL;
+	else
+		__success = 0 == strcmp(__expected, __result);
 	if (!__success)
 	printf("KO ft_strupcase(%s) = %s\n\texpected %s\n", str, __result, __expected);
 	return (__success);
@@ -1029,7 +1052,9 @@ int				main(void)
 
 	//_autogen_test_ft_strcat(char *dest, char *src, char *__expected);
 
-	_autogen_test_ft_strchr("alphanumeric", 'n', "umeric");
+	_autogen_test_ft_strchr("alphanumeric", 'n');
+	_autogen_test_ft_strchr("alphanumeric", 'k');
+	_autogen_test_ft_strchr("", 'n');
 
 	_autogen_test_ft_strchri("abc", 'b', 1);
 	_autogen_test_ft_strchri("abc", 'z', -1);
@@ -1085,20 +1110,22 @@ int				main(void)
 	_autogen_test_ft_strlen("", 0);
 	_autogen_test_ft_strlen("123456789", 9);
 
-	_autogen_test_ft_strlowcase(buffer = ft_strdup("DooM.D"), "doom.d");
+	_autogen_test_ft_strlowcase(buffer = ft_strdup("DooM.D    "), "doom.d    ");
 
 	//_autogen_test_ft_strmap(const char *s, char (*f)(char), char *__expected);
 
 	//_autogen_test_ft_strmapi(const char *s, char (*f)(unsigned int, char), char *__expected);
 
-	_autogen_test_ft_strncat(buffer = ft_strdup("henk"), "ffof", 6, "henkff");
+	_autogen_test_ft_strncat(memcpy(buffer, "henk\0\0\0\0\0\0", 8), "ffof", 2, "henkff");
 
 	_autogen_test_ft_strncmp("goont", "goond", 4);
 	_autogen_test_ft_strncmp("goont", "goond", 5);
 	_autogen_test_ft_strncmp("goont", "goond", 0);
 
-	_autogen_test_ft_strncpy(buffer, "doom.d", 4, "doom");
-	_autogen_test_ft_strncpy(buffer, "fg", 0, "");
+	buffer = ft_strdup("henkff");
+
+	_autogen_test_ft_strncpy(buffer, "doom.d", 4, "doomff");
+	_autogen_test_ft_strncpy(buffer, "fg", 0, "doomff");
 
 	_autogen_test_ft_strnequ("abj", "abc", 2, 1);
 	_autogen_test_ft_strnequ("abj", "abc", 3, 0);
@@ -1108,8 +1135,9 @@ int				main(void)
 
 	_autogen_test_ft_strnstr("I have 2 pigs lol ahi", "pig", 100);
 	_autogen_test_ft_strnstr("I have 2 pigs lol ahi", "nuke", 100);
-	_autogen_test_ft_strnstr("I have 2 pigs lol ahi", "pig", 3);
-	_autogen_test_ft_strnstr("I have 2 pigs lol ahi", "pig", 0);
+
+	for (int i = 0; i < 30; i++)
+		_autogen_test_ft_strnstr("I have 2 pigs lol ahi", "pig", i);
 
 	_autogen_test_ft_strrchr("fsdygvsgfkgfsbdjkbgrekbulischjlwi", 'h');
 	_autogen_test_ft_strrchr("fsdygvsgfkgfsbdjkbgrekbulischjlwi", '\0');

@@ -19,7 +19,6 @@ char	*ft_strncat(char *dest, const char *src, int nb)
 		dest++;
 	while ((*src) && (nb--))
 		*(dest++) = *(src++);
-	if (nb)
-		*dest = 0;
+	*dest = 0;
 	return (out);
 }
