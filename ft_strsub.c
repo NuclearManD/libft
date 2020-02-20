@@ -10,12 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "stdlib.h"
 #include "libft.h"
 
 char	*ft_strsub(const char *s, unsigned int start, size_t len)
 {
 	char *nova;
 
+	if (s == NULL)
+		return (NULL);
 	nova = ft_strnew(len);
 	if (nova == NULL)
 		return (nova);

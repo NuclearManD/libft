@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "stdlib.h"
 #include "libft.h"
 
 char	*ft_strjoin(const char *s1, const char *s2)
@@ -17,6 +18,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	char *out;
 	int i;
 
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
 	out = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
 	if (out == NULL)
 		return (NULL);
@@ -25,5 +28,6 @@ char	*ft_strjoin(const char *s1, const char *s2)
 		out[i++] = *(s1++);
 	while (*s2)
 		out[i++] = *(s2++);
+	out[i] = 0;
 	return (out);
 }

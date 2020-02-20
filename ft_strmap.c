@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "stdlib.h"
 #include "libft.h"
 
 char	*ft_strmap(const char *s, char (*f)(char))
@@ -17,6 +18,8 @@ char	*ft_strmap(const char *s, char (*f)(char))
 	char *out;
 	int i;
 
+	if (s == NULL)
+		return (NULL);
 	i = -1;
 	out = ft_strnew(ft_strlen(s));
 	if (out == NULL)

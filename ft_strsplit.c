@@ -13,23 +13,30 @@
 #include "libft.h"
 #include "stdlib.h"
 
-char	**ft_strsplit(const char *s, char c)
+static const char	*_utility(const char **s, char c)
+{
+	while (**s == c)
+		(*s)++;
+	return ((*s)--);
+}
+
+char				**ft_strsplit(const char *s, char c)
 {
 	int			nstr;
 	char		**arr;
 	const char	*so;
 	char		last;
 
+	if (s == NULL)
+		return (NULL);
 	nstr = ft_strcnt_norep(s, c) + 1;
 	arr = (char**)malloc(sizeof(char*) * (nstr + 1));
 	if (arr == NULL || c == 0)
-		return NULL;
+		return (NULL);
 	arr[nstr] = NULL;
 	nstr = 0;
 	last = c;
-	while (*s == c)
-		s++;
-	so = s--;
+	so = _utility(&s, c);
 	while (*(++s))
 	{
 		if (*s == c && c != last)
