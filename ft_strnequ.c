@@ -10,9 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strnequ(const char *s1, const char *s2)
+#include "string.h"
+
+int		ft_strnequ(const char *s1, const char *s2, size_t limit)
 {
-	while (*s1 != 0 && *s2 != 0)
+	while (*s1 != 0 && *s2 != 0 && limit-- > 0)
 		if (*(s1++) != *(s2++))
 			return (1);
 	return (*s1 != *s2);
