@@ -951,6 +951,16 @@ int				_autogen_test_ft_toupper(int c)
 	return (__success);
 }
 
+void			psplit(char **arr)
+{
+	if (arr == NULL)
+		printf("[null]");
+	else
+		while (*arr)
+			printf("%s ", *(arr++));
+	printf("\n");
+}
+
 int				main(void)
 {
 	int			retval;
@@ -1168,6 +1178,10 @@ int				main(void)
 		_autogen_test_ft_isprint(c);
 		_autogen_test_ft_isspace(c);
 	}
+
+	psplit(ft_strsplit("abc.d...gh.9c..", '.'));
+	psplit(ft_strsplit("abc", '.'));
+	psplit(ft_strsplit(NULL, '.'));
 
 	if (retval) printf("Success!\n");
 	else printf("Failure!\n");
