@@ -18,7 +18,7 @@ static int	itoa_setup(int n, char **str)
 	int size;
 	int b;
 
-	size = 1 + (n < 0);
+	size = (n == 0) + (n < 0) + 1;
 	b = n;
 	while (b != 0)
 	{
