@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_atoi(char *str)
 {
 	int out;
@@ -17,12 +19,12 @@ int	ft_atoi(char *str)
 	int isneg;
 
 	out = 0;
-	while (*str < 33)
+	while (ft_isspace(*str))
 		if (*(str++) == 0)
 			return (0);
 	isneg = 1 - 2 * (*str == '-');
 	i = 1 * (str[0] == '-' || str[0] == '+');
 	while ((str[i] <= '9') && (str[i] >= '0'))
-		out = (out * 10) + (str[i++] - '0');
-	return (out * isneg);
+		out = (out * 10) + isneg * (str[i++] - '0');
+	return (out);
 }

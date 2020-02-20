@@ -4,7 +4,10 @@
 
 char *ft_strdup(const char *s)
 {
-	char *nova = (char*)malloc(ft_strlen(s));
+	char *nova;
 
-	return ft_strcpy(nova, s);
+	nova = (char*)malloc(ft_strlen(s) + 1);
+	if (nova == NULL)
+		return (NULL);
+	return (ft_strcpy(nova, s));
 }

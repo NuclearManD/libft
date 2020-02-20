@@ -15,9 +15,11 @@ int		ft_logi(int base, int val)
 	int i;
 
 	i = 0;
-	if (val / base > 1)
-		while (val /= base > 1)
-			i++;
+	while (val / base > 0)
+	{
+		i++;
+		val = val / base;
+	}
 	
 	return (i);
 }
