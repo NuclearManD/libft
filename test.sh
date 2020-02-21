@@ -1,7 +1,8 @@
 make re
-gcc -O0 -g tests/test.c -L . -lft -o test
-echo "Running Maintest..."
-gcc -O0 -g tests/main.c -L . -lft -o maintest
+make clean
+gcc -O0 -g tests/test.c -L . -I . -lft -o tests/test
+gcc -O0 -g tests/main.c -L . -I . -lft -o tests/maintest
 #lldb test
-./test
-./maintest
+./tests/test
+echo "Running maintest..."
+./tests/maintest
