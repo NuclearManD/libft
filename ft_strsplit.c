@@ -13,38 +13,61 @@
 #include "libft.h"
 #include "stdlib.h"
 
-static const char	*_utility(const char **s, char c)
+static int			_count_strings_and_clean(const char **s, char c)
 {
-	while (**s == c)
+	int			cnt;
+	const char	*sr;
+	char		last;
+
+	while (**s == c && **s != 0)
 		(*s)++;
-	return ((*s)--);
+	sr = *s;
+	cnt = *sr != 0;
+	while (*sr)
+	{
+		last = *sr;
+		while (*sr == c)
+			sr++;
+		if (last == c && *sr != 0)
+			cnt++;
+		sr++;
+	}
+	return (cnt);
+}
+
+static char		**_split_loop(char **arr, const char *s, char c)
+{
+	int			i;
+	char		last;
+	const char	*so;
+
+	i = 0;
+	so = s;
+	last = *s;
+	while (*(++s))
+	{
+		if (*s == c && c != last)
+			arr[i++] = ft_strcut(so, c);
+		if (*s == c)
+			so = s + 1;
+		last = *s;
+	}
+	if (ft_strlen(so) > 0 && so[0] != c)
+		arr[i] = ft_strcut(so, c);
+	return (arr);
 }
 
 char				**ft_strsplit(const char *s, char c)
 {
 	int			nstr;
 	char		**arr;
-	const char	*so;
-	char		last;
 
 	if (s == NULL)
 		return (NULL);
-	nstr = ft_strcnt_norep(s, c) + 1;
+	nstr = _count_strings_and_clean(&s, c);
 	arr = (char**)malloc(sizeof(char*) * (nstr + 1));
-	if (arr == NULL || c == 0)
+	if (arr == NULL)
 		return (NULL);
 	arr[nstr] = NULL;
-	nstr = 0;
-	last = c;
-	so = _utility(&s, c);
-	while (*(++s))
-	{
-		if (*s == c && c != last)
-		{
-			arr[nstr++] = ft_strcut(so, c);
-			so = ++s;
-		}
-		last = c;
-	}
-	return (arr);
+	return (_split_loop(arr, s, c));
 }
