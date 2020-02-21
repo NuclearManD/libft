@@ -13,10 +13,12 @@
 unsigned int	ft_strlcat(char *dest, const char *src, unsigned int size)
 {
 	unsigned int out;
+	unsigned int l;
 
-	out = 0;
-	while (*(dest++) && (out < size))
-		out++;
+	l = 0;
+	while (*(dest++) && (l < size))
+		l++;
+	out = l;
 	dest--;
 	while ((0 != *src) && (out + 1 < size))
 	{
@@ -25,7 +27,7 @@ unsigned int	ft_strlcat(char *dest, const char *src, unsigned int size)
 	}
 	while (*(src++))
 		out++;
-	if (size > out)
+	if (size > l)
 		*dest = 0;
 	return (out);
 }
