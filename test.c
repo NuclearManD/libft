@@ -957,7 +957,7 @@ void			psplit(char **arr)
 		printf("[null]");
 	else
 		while (*arr)
-			printf("%s ", *(arr++));
+			printf("'%s', ", *(arr++));
 	printf("\n");
 }
 
@@ -1077,6 +1077,8 @@ int				main(void)
 	_autogen_test_ft_strcmp("ouhcc", "ouhcc2");
 	_autogen_test_ft_strcmp("ouhcc", "oclpa");
 	_autogen_test_ft_strcmp("onano", "ouuffghuu");
+	_autogen_test_ft_strcmp("\0", "\200");
+	_autogen_test_ft_strcmp("\x12\xff\x65\x12\xbd\xde\xad", "\x12\x02");
 
 	_autogen_test_ft_strcnt("115200", '0', 2);
 	_autogen_test_ft_strcnt("115200", '\0', 1);
@@ -1181,6 +1183,8 @@ int				main(void)
 
 	psplit(ft_strsplit("abc.d...gh.9c..", '.'));
 	psplit(ft_strsplit("abc", '.'));
+	psplit(ft_strsplit("***salut****!**", '*'));
+	psplit(ft_strsplit("abc", '\0'));
 	psplit(ft_strsplit(NULL, '.'));
 
 	if (retval) printf("Success!\n");
