@@ -13,7 +13,7 @@
 #include "libft.h"
 #include "unistd.h"
 
-void	ft_putnbr(int nb)
+void			ft_putnbr(int nb)
 {
 	char	out[12];
 	int		len;

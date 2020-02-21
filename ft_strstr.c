@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, const char *to_find)
+char			*ft_strstr(char *str, const char *to_find)
 {
 	int i;
 

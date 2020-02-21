@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static void	recursive_putnbr_base(int nb, int baselen, char *base)
+static void		recursive_putnbr_base(int nb, int baselen, char *base)
 {
 	if (nb < baselen)
 		ft_putchar(base[nb]);
@@ -23,7 +23,9 @@ static void	recursive_putnbr_base(int nb, int baselen, char *base)
 	}
 }
 
-void	ft_putnbr_base(int nb, char *base)
+
+
+void			ft_putnbr_base(int nb, char *base)
 {
 	int len;
 	int i;
@@ -34,10 +36,10 @@ void	ft_putnbr_base(int nb, char *base)
 		i = len + 1;
 		while (base[i])
 			if (base[i++] == base[len] || base[len] == 43 || base[len] == 45)
-				return ;
+				return ();
 	}
 	if (len <= 1)
-		return ;
+		return ();
 	if (nb < 0)
 	{
 		ft_putchar('-');

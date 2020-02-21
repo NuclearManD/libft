@@ -12,7 +12,7 @@
 
 #include "unistd.h"
 
-void	ft_putnbr_fd(int nb, int fd)
+void			ft_putnbr_fd(int nb, int fd)
 {
 	char	out[12];
 	int		len;

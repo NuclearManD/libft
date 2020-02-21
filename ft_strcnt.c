@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcnt(const char *s, char c)
+int				ft_strcnt(const char *s, char c)
 {
 	int i;
 

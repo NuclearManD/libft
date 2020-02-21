@@ -15,7 +15,7 @@
 **  If character c is not found then the length of the string is returned
 */
 
-int		ft_strchri(const char *s, char c)
+int				ft_strchri(const char *s, char c)
 {
 	int i;
 

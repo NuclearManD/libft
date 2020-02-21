@@ -14,7 +14,7 @@
 ** Counts the numer of occurances of character c, not including repeats
 */
 
-int		ft_strcnt_norep(const char *s, char c)
+int				ft_strcnt_norep(const char *s, char c)
 {
 	int i;
 	char last;

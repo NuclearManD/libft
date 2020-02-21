@@ -13,7 +13,7 @@
 #include "libft.h"
 #include "stdlib.h"
 
-static int	itoa_setup(int n, char **str)
+static int		itoa_setup(int n, char **str)
 {
 	int size;
 	int b;
@@ -34,7 +34,9 @@ static int	itoa_setup(int n, char **str)
 	return (size);
 }
 
-char		*ft_itoa(int n)
+
+
+char			*ft_itoa(int n)
 {
 	int		len;
 	int		i;

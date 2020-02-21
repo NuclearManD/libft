@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcapitalize(char *str)
+char			*ft_strcapitalize(char *str)
 {
 	int		i;
 	char	ch;

@@ -13,7 +13,7 @@
 #include "libft.h"
 #include "stdlib.h"
 
-static int			_count_strings_and_clean(const char **s, char c)
+static int		_count_strings_and_clean(const char **s, char c)
 {
 	int			cnt;
 	const char	*sr;
@@ -34,6 +34,8 @@ static int			_count_strings_and_clean(const char **s, char c)
 	}
 	return (cnt);
 }
+
+
 
 static char		**_split_loop(char **arr, const char *s, char c)
 {
@@ -58,7 +60,9 @@ static char		**_split_loop(char **arr, const char *s, char c)
 	return (arr);
 }
 
-char				**ft_strsplit(const char *s, char c)
+
+
+char			**ft_strsplit(const char *s, char c)
 {
 	int			nstr;
 	char		**arr;

@@ -13,7 +13,7 @@
 #include "stdlib.h"
 #include "libft.h"
 
-char	*ft_strmap(const char *s, char (*f)(char))
+char			*ft_strmap(const char *s, char (*f)(char))
 {
 	char *out;
 	int i;
@@ -26,5 +26,5 @@ char	*ft_strmap(const char *s, char (*f)(char))
 		return (NULL);
 	while (s[++i])
 		out[i] = f(s[i]);
-	return out;
+	return (out);
 }

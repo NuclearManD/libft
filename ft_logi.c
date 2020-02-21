@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_logi(int base, int val)
+int				ft_logi(int base, int val)
 {
 	int i;
 

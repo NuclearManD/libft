@@ -16,7 +16,7 @@
 ** These functions act as hash functions to easily check that two objects match
 */
 
-long	ft_signature_s(char *str)
+long			ft_signature_s(char *str)
 {
 	long hash;
 	long a;
@@ -32,17 +32,23 @@ long	ft_signature_s(char *str)
 	return (hash);
 }
 
-long	ft_signature_i(int val)
+
+
+long			ft_signature_i(int val)
 {
 	return (0x2809000000000000L | val);
 }
 
-long	ft_signature_l(long val)
+
+
+long			ft_signature_l(long val)
 {
 	return (val);
 }
 
-long	ft_signature_d(double val)
+
+
+long			ft_signature_d(double val)
 {
 	long res;
 
