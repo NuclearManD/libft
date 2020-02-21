@@ -1,6 +1,5 @@
 *.o
 *.a
 
-.tests/test
-.tests/maintest
+.tests
 *.dSYM
