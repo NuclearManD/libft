@@ -53,7 +53,8 @@ static char		**_split_loop(char **arr, const char *s, char c)
 		last = *s;
 	}
 	if (ft_strlen(so) > 0 && so[0] != c)
-		arr[i] = ft_strcut(so, c);
+		arr[i++] = ft_strcut(so, c);
+	arr[i] = NULL;
 	return (arr);
 }
 
@@ -68,6 +69,5 @@ char				**ft_strsplit(const char *s, char c)
 	arr = (char**)malloc(sizeof(char*) * (nstr + 1));
 	if (arr == NULL)
 		return (NULL);
-	arr[nstr] = NULL;
 	return (_split_loop(arr, s, c));
 }
