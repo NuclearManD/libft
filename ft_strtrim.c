@@ -15,8 +15,8 @@
 
 char			*ft_strtrim(const char *s)
 {
-	int len;
-	char *nova;
+	int		len;
+	char	*nova;
 
 	if (s == NULL)
 		return (NULL);

@@ -23,8 +23,6 @@ static void		recursive_putnbr_base(int nb, int baselen, char *base)
 	}
 }
 
-
-
 void			ft_putnbr_base(int nb, char *base)
 {
 	int len;

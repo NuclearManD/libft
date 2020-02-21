@@ -20,6 +20,5 @@ int				ft_logi(int base, int val)
 		i++;
 		val = val / base;
 	}
-	
 	return (i);
 }

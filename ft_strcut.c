@@ -23,6 +23,6 @@ char			*ft_strcut(const char *s, char c)
 
 	i = ft_strchri(s, c);
 	if (i == -1)
-		return ft_strdup(s);
+		return (ft_strdup(s));
 	return (ft_strsub(s, 0, i));
 }

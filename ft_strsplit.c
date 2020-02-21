@@ -13,7 +13,7 @@
 #include "libft.h"
 #include "stdlib.h"
 
-static int		_count_strings_and_clean(const char **s, char c)
+static int		i_count_strings_and_clean(const char **s, char c)
 {
 	int			cnt;
 	const char	*sr;
@@ -35,9 +35,7 @@ static int		_count_strings_and_clean(const char **s, char c)
 	return (cnt);
 }
 
-
-
-static char		**_split_loop(char **arr, const char *s, char c)
+static char		**i_split_loop(char **arr, const char *s, char c)
 {
 	int			i;
 	char		last;
@@ -60,8 +58,6 @@ static char		**_split_loop(char **arr, const char *s, char c)
 	return (arr);
 }
 
-
-
 char			**ft_strsplit(const char *s, char c)
 {
 	int			nstr;
@@ -69,9 +65,9 @@ char			**ft_strsplit(const char *s, char c)
 
 	if (s == NULL)
 		return (NULL);
-	nstr = _count_strings_and_clean(&s, c);
+	nstr = i_count_strings_and_clean(&s, c);
 	arr = (char**)malloc(sizeof(char*) * (nstr + 1));
 	if (arr == NULL)
 		return (NULL);
-	return (_split_loop(arr, s, c));
+	return (i_split_loop(arr, s, c));
 }

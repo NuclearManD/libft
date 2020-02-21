@@ -16,8 +16,8 @@
 
 int				ft_strcnt_norep(const char *s, char c)
 {
-	int i;
-	char last;
+	int		i;
+	char	last;
 
 	i = 0;
 	last = c;

@@ -34,13 +34,11 @@ static int		itoa_setup(int n, char **str)
 	return (size);
 }
 
-
-
 char			*ft_itoa(int n)
 {
 	int		len;
 	int		i;
-	char 	*str;
+	char	*str;
 
 	len = itoa_setup(n, &str);
 	if (str == NULL)
