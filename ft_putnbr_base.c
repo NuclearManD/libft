@@ -36,10 +36,10 @@ void			ft_putnbr_base(int nb, char *base)
 		i = len + 1;
 		while (base[i])
 			if (base[i++] == base[len] || base[len] == 43 || base[len] == 45)
-				return ();
+				return ;
 	}
 	if (len <= 1)
-		return ();
+		return ;
 	if (nb < 0)
 	{
 		ft_putchar('-');
