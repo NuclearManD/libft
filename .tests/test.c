@@ -695,7 +695,7 @@ int				_autogen_test_ft_strlcat(char *dest, const char *src, unsigned int size)
 	__success = __expected == __result;
 	__success = __success && 0 == strcmp(__buf, dest);
 	if (!__success)
-	printf("KO ft_strlcat(%s, %s, %u) = %u, %s\n\texpected %u, %s\n", dest, src, size, __result, dest, __expected, __buf);
+	printf("KO ft_strlcat(%s, %s, %u) = %zu, %s\n\texpected %zu, %s\n", dest, src, size, __result, dest, __expected, __buf);
 	return (__success);
 }
 
@@ -707,7 +707,7 @@ int				_autogen_test_ft_strlcpy(char *dest, const char *src, unsigned int n, uns
 	__result = ft_strlcpy(dest, src, n);
 	__success = __expected == __result;
 	if (!__success)
-	printf("KO ft_strlcpy(%s, %s, %u) = %u\n\texpected %u\n", dest, src, n, __result, __expected);
+	printf("KO ft_strlcpy(%s, %s, %u) = %zu\n\texpected %u\n", dest, src, n, __result, __expected);
 	return (__success);
 }
 
@@ -1343,15 +1343,16 @@ int				main(void)
 		_autogen_test_ft_isspace(c);
 	}
 
-	psplit(ft_strsplit("abc.d...gh.9c..", '.'));
+	/*psplit(ft_strsplit("abc.d...gh.9c..", '.'));
 	psplit(ft_strsplit("abc", '.'));
 	psplit(ft_strsplit("***salut****!**", '*'));
 	psplit(ft_strsplit("abc", '\0'));
-	psplit(ft_strsplit(NULL, '.'));
+	psplit(ft_strsplit(NULL, '.'));*/
 
 	uf_test_strsplit();
 
-	if (retval) printf("Success!\n");
-	else printf("Failure!\n");
+	/*if (retval) printf("Success!\n");
+	else printf("Failure!\n");*/
+	return (0);
 }
 
