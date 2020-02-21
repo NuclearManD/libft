@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrophy <dbrophy@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/19 22:54:25 by dbrophy           #+#    #+#             */
-/*   Updated: 2020/02/19 22:54:25 by dbrophy          ###   ########.fr       */
+/*   Created: 2020/02/21 14:23:55 by dbrophy           #+#    #+#             */
+/*   Updated: 2020/02/21 14:23:55 by dbrophy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 # define LIBFT_H
 
 # include "string.h"
+
+typedef struct		s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list;
 
 int				ft_atoi(char *str);
 int				ft_atoi_base(char *str, char *base);
@@ -28,6 +35,12 @@ int				ft_isprint(int c);
 int				ft_isspace(int c);
 char			*ft_itoa(int n);
 int				ft_logi(int base, int val);
+void			ft_lstadd(t_list **alst, t_list *new);
+void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+t_list			*ft_lstnew(const void *content, size_t content_size);
 void			*ft_memalloc(size_t size);
 void			*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);
