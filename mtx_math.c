@@ -31,7 +31,7 @@ void			mtx_mult(t_mtx *dest, t_mtx *a, t_mtx *b)
 			sum = 0.0;
 			i = -1;
 			while (++i < a->x_size)
-				sum += a->mem[i][y] * b->mem[x][i];
-			dest->mem[x][y] = sum;
+				sum += a->mem[i + y * a->x_size] * b->mem[x + i * b->y_size];
+			dest->mem[x + y * dest->x_size] = sum;
 		}
 }

@@ -23,21 +23,13 @@ t_mtx			*mtx_new(int x, int y)
 		return (NULL);
 	mtx->x_size = x;
 	mtx->y_size = y;
-	mtx->mem = (double**)malloc(sizeof(double*) * x);
+	mtx->mem = (double*)malloc(sizeof(double) * x * y);
 	if (mtx->mem == NULL)
-		return (NULL);
-	while (x--)
 	{
-		mtx->mem[x] = (double*)malloc(sizeof(double) * mtx->y_size);
-		if (mtx->mem[x] == NULL)
-		{
-			while (++x < mtx->x_size)
-				free(mtx->mem[x]);
-			free(mtx->mem);
-			return (NULL);
-		}
-		ft_bzero(mtx->mem[x], y * sizeof(double));
+		free(mtx);
+		return (NULL);
 	}
+	ft_bzero(mtx->mem, x * y * sizeof(double));
 	return (mtx);
 }
 
@@ -50,58 +42,37 @@ t_mtx			*mtx_new_no_zero(int x, int y)
 		return (NULL);
 	mtx->x_size = x;
 	mtx->y_size = y;
-	mtx->mem = (double**)malloc(sizeof(double*) * x);
+	mtx->mem = (double*)malloc(sizeof(double) * x * y);
 	if (mtx->mem == NULL)
-		return (NULL);
-	while (x--)
 	{
-		mtx->mem[x] = (double*)malloc(sizeof(double) * mtx->y_size);
-		if (mtx->mem[x] == NULL)
-		{
-			while (++x < mtx->x_size)
-				free(mtx->mem[x]);
-			free(mtx->mem);
-			return (NULL);
-		}
+		free(mtx);
+		return (NULL);
 	}
 	return (mtx);
 }
 
-void			mtx_del(t_mtx *mtx)
+void			mtx_setup_stack(t_mtx *mtx, int x, int y, void *mem)
 {
-	unsigned char x;
-
-	x = -1;
-	while (++x < mtx->x_size)
-		free(mtx->mem[x]);
-	free(mtx->mem);
-	free(mtx);
+	mtx->x_size = x;
+	mtx->y_size = y;
+	mtx->mem = (double*)mem;
 }
 
 t_mtx			*mtx_dup(t_mtx *src)
 {
-	unsigned char	x;
-	t_mtx			*mtx;
+	t_mtx	*mtx;
 
 	mtx = (void*)malloc(sizeof(t_mtx));
 	if (mtx == NULL)
 		return (NULL);
-	ft_memcpy(&(mtx->x_size), &(src->x_size), 2);
-	mtx->mem = (double**)malloc(sizeof(double*) * src->x_size);
+	mtx->x_size = src->x_size;
+	mtx->y_size = src->y_size;
+	mtx->mem = (double*)malloc(sizeof(double) * src->x_size * src->y_size);
 	if (mtx->mem == NULL)
-		return (NULL);
-	x = src->x_size;
-	while (x--)
 	{
-		mtx->mem[x] = (double*)malloc(sizeof(double) * mtx->y_size);
-		if (mtx->mem[x] == NULL)
-		{
-			while (++x < mtx->x_size)
-				free(mtx->mem[x]);
-			free(mtx->mem);
-			return (NULL);
-		}
-		ft_memcpy(mtx->mem[x], src->mem[x], src->y_size * sizeof(double));
+		free(mtx);
+		return (NULL);
 	}
+	ft_memcpy(mtx->mem, src->mem, sizeof(double) * src->x_size * src->y_size);
 	return (mtx);
 }
