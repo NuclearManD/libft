@@ -13,21 +13,20 @@
 #ifndef LIBFTMATH_H
 # define LIBFTMATH_H
 
-#include "string.h"
+# include "string.h"
 
 typedef struct	s_mtx
 {
 	unsigned char	x_size;
-	unsigned char 	y_size;
+	unsigned char	y_size;
 	double			**mem;
 }				t_mtx;
 
 typedef struct	s_vector
 {
-	unsigned char 	size;
+	unsigned char	size;
 	double			*vals;
 }				t_vector;
-
 
 double			ft_sqrt(double val);
 void			mtx_mult(t_mtx *dest, t_mtx *a, t_mtx *b);
