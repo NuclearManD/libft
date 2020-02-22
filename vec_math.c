@@ -25,6 +25,7 @@ double			vec_mag(t_vector *vec)
 	int		i;
 
 	i = vec->size;
+	sum = 0.0;
 	while (i--)
 	{
 		a = vec->vals[i];
@@ -44,13 +45,13 @@ void			vec_norm(t_vector *vec)
 		vec->vals[i] /= mag;
 }
 
-void			vec_muls(t_vector *vec, double S)
+void			vec_muls(t_vector *vec, double scalar)
 {
 	int		i;
 
 	i = vec->size;
 	while (i--)
-		vec->vals[i] *= S;
+		vec->vals[i] *= scalar;
 }
 
 double			vec_dot(t_vector *a, t_vector *b)
@@ -62,4 +63,5 @@ double			vec_dot(t_vector *a, t_vector *b)
 	i = a->size;
 	while (i--)
 		sum += a->vals[i] * b->vals[i];
+	return (sum);
 }

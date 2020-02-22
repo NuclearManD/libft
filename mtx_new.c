@@ -87,7 +87,7 @@ t_mtx			*mtx_dup(t_mtx *src)
 	if (mtx == NULL)
 		return (NULL);
 	ft_memcpy(&(mtx->x_size), &(src->x_size), 2);
-	mtx->mem = (double**)malloc(sizeof(double*) * loc[0]);
+	mtx->mem = (double**)malloc(sizeof(double*) * src->x_size);
 	if (mtx->mem == NULL)
 		return (NULL);
 	x = src->x_size;

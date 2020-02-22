@@ -37,7 +37,7 @@ void			mtx_del(t_mtx *mtx);
 t_mtx			*mtx_dup(t_mtx *src);
 double			vec_mag(t_vector *vec);
 void			vec_norm(t_vector *vec);
-void			vec_muls(t_vector *vec, double S);
+void			vec_muls(t_vector *vec, double scalar);
 double			vec_dot(t_vector *a, t_vector *b);
 t_vector		*vec_new(int size);
 t_vector		*vec_dup(t_vector *vec);

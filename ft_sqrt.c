@@ -22,7 +22,7 @@ double			ft_sqrt(double val)
 	while (n != l && i--)
 	{
 		l = n;
-		n = (n + val/n) / 2.0;
+		n = (n + val / n) / 2.0;
 	}
 	return (n);
 }

@@ -16,8 +16,8 @@
 
 t_vector		*vec_new(int size)
 {
-	t_vector *vec;
-	int i;
+	t_vector	*vec;
+	int			i;
 
 	vec = malloc(sizeof(t_vector));
 	if (vec == NULL)
