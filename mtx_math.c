@@ -16,7 +16,7 @@
 ** For performance reasons, this library assumes all sizes are correct...
 */
 
-void			mtx_mult(mtx_t *dest, mtx_t *a, mtx_t *b)
+void			mtx_mult(t_mtx *dest, t_mtx *a, t_mtx *b)
 {
 	int		x;
 	int		y;
@@ -25,13 +25,13 @@ void			mtx_mult(mtx_t *dest, mtx_t *a, mtx_t *b)
 
 	x = -1;
 	y = -1;
-	while (++x < dest.x_size)
-		while (++y < dest.y_size)
+	while (++x < dest->x_size)
+		while (++y < dest->y_size)
 		{
 			sum = 0.0;
 			i = -1;
 			while (++i < a->x_size)
 				sum += a->mem[i][y] * b->mem[x][i];
-			dest.mem[x][y] = sum;
+			dest->mem[x][y] = sum;
 		}
 }

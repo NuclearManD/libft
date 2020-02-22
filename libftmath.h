@@ -13,6 +13,8 @@
 #ifndef LIBFTMATH_H
 # define LIBFTMATH_H
 
+#include "string.h"
+
 typedef struct	s_list
 {
 	void			*content;
@@ -35,10 +37,11 @@ typedef struct	s_vector
 
 
 double			ft_sqrt(double val);
-void			mtx_mult(mtx_t *dest, mtx_t *a, mtx_t *b);
-mtx_t			*mtx_new(int x, int y);
-void			mtx_del(mtx_t *mtx);
-mtx_t			*mtx_dup(mtx_t *src);
+void			mtx_mult(t_mtx *dest, t_mtx *a, t_mtx *b);
+t_mtx			*mtx_new(int x, int y);
+t_mtx			*mtx_new_no_zero(int x, int y);
+void			mtx_del(t_mtx *mtx);
+t_mtx			*mtx_dup(t_mtx *src);
 double			vec_mag(t_vector *vec);
 void			vec_norm(t_vector *vec);
 void			vec_muls(t_vector *vec, double S);
