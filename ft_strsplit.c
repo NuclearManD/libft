@@ -69,5 +69,10 @@ char			**ft_strsplit(const char *s, char c)
 	arr = (char**)malloc(sizeof(char*) * (nstr + 1));
 	if (arr == NULL)
 		return (NULL);
+	if (nstr == 0)
+	{
+		arr[0] = NULL;
+		return arr;
+	}
 	return (i_split_loop(arr, s, c));
 }
