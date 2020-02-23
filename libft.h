@@ -32,6 +32,7 @@ char			*ft_getoption(int argc, char **argv, char *option);
 int				ft_atoi(char *str);
 int				ft_atoi_base(char *str, char *base);
 void			ft_bzero(void *s, size_t n);
+int				ft_getline(const int fd, char **line);
 int				ft_imax(int a, int b);
 int				ft_imin(int a, int b);
 int				ft_isalnum(int c);
