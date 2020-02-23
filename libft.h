@@ -103,5 +103,7 @@ char			*ft_strtrim(const char *s);
 char			*ft_strupcase(char *str);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
+int				ft_wordsplit(char **arr, char *s, int maxcount);
+int				ft_wordcount(char *s);
 
 #endif
