@@ -22,6 +22,13 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+# define FLAG_ERR_INVALID -3
+# define FLAG_ERR_NONE_SPECIFIED -2
+
+long			ft_getflags(int argc, char **argv, char *flags);
+int				ft_hasoption(int argc, char **argv, char *option);
+char			*ft_getoption(int argc, char **argv, char *option);
+
 int				ft_atoi(char *str);
 int				ft_atoi_base(char *str, char *base);
 void			ft_bzero(void *s, size_t n);
