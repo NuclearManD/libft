@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libftmath.h"
+#include "stdlib.h"
+
 void			mtx_del(t_mtx *mtx)
 {
 	free(mtx->mem);

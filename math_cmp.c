@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libftmath.h"
 
 int				mtxcmp(t_mtx *a, t_mtx *b)
 {
