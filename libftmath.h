@@ -28,6 +28,19 @@ typedef struct	s_vector
 	double			*vals;
 }				t_vector;
 
+typedef struct	s_vec2
+{
+	double			x;
+	double			y;
+}				t_vec2;
+
+typedef struct	s_vec3
+{
+	double			x;
+	double			y;
+	double			z;
+}				t_vec3;
+
 double			ft_sqrt(double val);
 
 void			mtx_mult(t_mtx *dest, t_mtx *a, t_mtx *b);
@@ -52,5 +65,20 @@ t_vector		*arr2vec(t_vector *dst, double *src);
 
 int				mtxcmp(t_mtx *a, t_mtx *b);
 int				veccmp(t_vector *a, t_vector *b);
+
+double			vec2_mag(t_vec2 *vec);
+void			vec2_norm(t_vec2 *vec);
+void			vec2_muls(t_vec2 *vec, double s);
+double			vec2_dot(t_vec2 *a, t_vec2 *b);
+t_vec2			*vec2_new(double x, double y);
+t_vec2			*vec2_dup(t_vec2 *vec);
+t_vec2			*vec2_cpy(t_vec2 *dst, t_vec2 *src);
+double			vec3_mag(t_vec3 *vec);
+void			vec3_norm(t_vec3 *vec);
+void			vec3_muls(t_vec3 *vec, double s);
+double			vec3_dot(t_vec3 *a, t_vec3 *b);
+t_vec3			*vec3_new(double x, double y, double z);
+t_vec3			*vec3_dup(t_vec3 *vec);
+t_vec3			*vec3_cpy(t_vec3 *dst, t_vec3 *src);
 
 #endif
