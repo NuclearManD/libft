@@ -14,7 +14,6 @@ double			ft_sqrt(double val)
 {
 	double	n;
 	double	l;
-	int		i;
 
 	n = val / 2.0;
 	l = 0;
