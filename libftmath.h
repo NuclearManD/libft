@@ -46,9 +46,9 @@ t_vector		*vec_dup(t_vector *vec);
 void			vec_del(t_vector *vec);
 
 double			*mtx2arr(double *dst, t_mtx *src);
-void			arr2mtx(t_mtx *dst, double *src);
+t_mtx			*arr2mtx(t_mtx *dst, double *src);
 double			*vec2arr(double *dst, t_vector *src);
-void			arr2vec(t_vector *dst, double *src);
+t_vector		*arr2vec(t_vector *dst, double *src);
 
 int				mtxcmp(t_mtx *a, t_mtx *b);
 int				veccmp(t_vector *a, t_vector *b);

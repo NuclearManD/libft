@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libftmath.h"
 
 double			*mtx2arr(double *dst, t_mtx *src)
 {
