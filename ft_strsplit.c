@@ -72,7 +72,7 @@ char			**ft_strsplit(const char *s, char c)
 	if (nstr == 0)
 	{
 		arr[0] = NULL;
-		return arr;
+		return (arr);
 	}
 	return (i_split_loop(arr, s, c));
 }
