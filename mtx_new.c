@@ -62,6 +62,8 @@ t_mtx			*mtx_dup(t_mtx *src)
 {
 	t_mtx	*mtx;
 
+	if (src == NULL)
+		return (NULL);
 	mtx = (void*)malloc(sizeof(t_mtx));
 	if (mtx == NULL)
 		return (NULL);
