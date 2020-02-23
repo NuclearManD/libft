@@ -18,8 +18,7 @@ double			ft_sqrt(double val)
 
 	n = val / 2.0;
 	l = 0;
-	i = (val / 100) + 3;
-	while (n != l && i--)
+	while (n != l)
 	{
 		l = n;
 		n = (n + val / n) / 2.0;
