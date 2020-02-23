@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+#include "string.h"
+
 int				ft_wordsplit(char **arr, char *s, int maxcount)
 {
 	int retval;
